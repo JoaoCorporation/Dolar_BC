@@ -1,29 +1,29 @@
 # Currency-Converter
-## 1. Description
-This script has as its objective to offer a pack of functions to work with Dollar, so it can be easily imported into your projects.
-## 2. Installation
-This script is very easy to import, first, is necessary to move it to the directory of your project, after,  you should install all dependencies necessary, for last, is just use the Import statement.
-<br> Example:
+## 1. Descrição
+Este script tem como objetivo oferecer um pacote de funções para trabalhar com Dólar, para que possa ser facilmente importado em seus projetos.
+## 2. Instalação
+Este script é muito fácil de importar, primeiro, é necessário movê-lo para o diretório do seu projeto, depois, você deve instalar todas as dependências necessárias, por último, basta usar a instrução de importação.
+<br> Exemplo:
 ``` from bs4 import BeautifulSoup
 Import re
 Import request
 Import Dolar-BC
 ```
 
-## 3. Methods
-The script has four methods created for use. Above we will see what are they and their functions.
-1.	**Bilder**: This method is responsible for access to the Banco Central page, to fix the form, get the values, and process these data. That method receives a date initial and a date final.  Example: ```` USD = USD2BRL(“13/12/2022”, “14/12/2022”)````
-2.	**show_values**: This method returns the Dollar’s prince between the interval of dates informed. Example: ```` values =  USD.show_values()````
-3.	**BRL2USD**: This method receives a value in BRL and returns the values in USD. Example: ````conversion = USD. BRL2USD(30.90) ````
-4.	 **USD2BRL**: This method receives a value in USD and returns the values in BRL. Example: ````conversion = USD. USD2BRL(30.90) ````
+## 3. Métodos
+O script possui quatro métodos criados para uso. Abaixo veremos quais são e suas funções.
+1.	**Bilder**: Este método é responsável por acessar a página do Banco Central, preencher o formulário, obter os valores e processar esses dados. Esse método recebe uma data inicial e uma data final. Exemplo: ```` USD = USD2BRL(“13/12/2022”, “14/12/2022”)````
+2.	**show_values**: Este método retorna o preço do Dólar entre o intervalo de datas informado. Exemplo: ```` values =  USD.show_values()````
+3.	**BRL2USD**: Este método recebe um valor em BRL e retorna os valores em USD. Exemplo: ````conversion = USD. BRL2USD(30.90) ````
+4.	 **USD2BRL**: Este método recebe um valor em USD e retorna os valores em BRL. Exemplo: ````conversion = USD. USD2BRL(30.90) ````
 
 ## 4. Docker
-To use the Docker file of API, you, first, must download the Docker Desktop, after to copy the files at branch “Docker” to your computer, then, open a terminal,  and execute the commands below:
+Para usar o arquivo Docker da API, você, primeiro, deve baixar o Docker Desktop, depois copiar os arquivos da branch “Docker” para o seu computador, então, abrir um terminal e executar os comandos abaixo:
 ````
 Docker build -t dollar .
 ````
-Press Enter, then:
+Pressione Enter, então:
 ````
 Docker run -it dollar
 ````
- **Obs**: The files need to be in the same folder in the folder “app”, which should be created containing the API. Tested with success on 01/31/2023.
+ **Obs**: Os arquivos precisam estar na mesma pasta na pasta “app”, que deve ser criada contendo a API. Testado com sucesso em 31/01/2023.
