@@ -12,7 +12,7 @@ Import Dolar-BC
 
 ## 3. Métodos
 O script possui quatro métodos criados para uso. Abaixo veremos quais são e suas funções.
-1.	**Bilder**: Este método é responsável por acessar a página do Banco Central, preencher o formulário, obter os valores e processar esses dados. Esse método recebe uma data inicial e uma data final. Exemplo: ```` USD = USD2BRL(“13/12/2022”, “14/12/2022”)````
+1.	**Builder**: Este método é responsável por acessar a página do Banco Central, preencher o formulário, obter os valores e processar esses dados. Esse método recebe uma data inicial e uma data final. Exemplo: ```` USD = USD2BRL(“13/12/2022”, “14/12/2022”)````
 2.	**show_values**: Este método retorna o preço do Dólar entre o intervalo de datas informado. Exemplo: ```` values =  USD.show_values()````
 3.	**BRL2USD**: Este método recebe um valor em BRL e retorna os valores em USD. Exemplo: ````conversion = USD. BRL2USD(30.90) ````
 4.	 **USD2BRL**: Este método recebe um valor em USD e retorna os valores em BRL. Exemplo: ````conversion = USD. USD2BRL(30.90) ````
