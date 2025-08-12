@@ -1,0 +1,31 @@
+name: Auto-assign when comment contains variations of "Bora"
+
+on:
+  issue_comment:
+    types: [created]
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  assign-when-bora:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check if comment contains a variation of "Bora"
+        id: check_bora
+        run: |
+          body="${{ github.event.comment.body }}"
+          if echo "$body" | grep -iE '\bbora+\b'; then
+            echo "match=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "match=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Assign issue to comment author
+        if: steps.check_bora.outputs.match == 'true'
+        uses: actions-ecosystem/action-add-assignees@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          assignees: ${{ github.event.comment.user.login }}

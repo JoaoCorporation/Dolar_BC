@@ -1,0 +1,13 @@
+name: Exibir Dados da Issue
+on:
+  issues:
+    types:
+      - opened
+      - edited
+jobs:
+  process_issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Imprimir Dados da Issue
+        run: |
+          echo "Issue Body: ${{ github.event.issue.body }}"
